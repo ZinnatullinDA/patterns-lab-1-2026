@@ -6,10 +6,10 @@ from services import ClockFormatter, ClockHistory
 
 
 class ClockFacade:
-    def __init__(self, clock: BaseAnalogClock | None = None) -> None:
-        self._clock = DigitalClockAdapter(clock)
-        self._formatter = ClockFormatter()
-        self._history = ClockHistory()
+    def __init__(self, clock: BaseAnalogClock, formatter: ClockFormatter, history: ClockHistory) -> None:
+        self._clock = clock
+        self._formatter = formatter
+        self._history = history
 
     def set_date_time(self, value: datetime) -> None:
         self._clock.set_date_time(value)
