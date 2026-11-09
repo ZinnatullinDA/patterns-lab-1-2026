@@ -14,3 +14,7 @@ testpaths = ["tests"]
 python_files = ["test_*.py"]
 addopts = "-q"
 pythonpath = ["."]
+
+[tool.setuptools]
+py-modules = ["app"]
+packages = ["adapters", "client", "clocks", "consts", "facades", "interfaces", "services"]
